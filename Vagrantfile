@@ -7,9 +7,8 @@ Vagrant.configure("2") do |config|
     acs.vm.box = "bento/ubuntu-16.04"
     acs.vm.hostname = "acs"
     acs.vm.network "private_network", ip: "192.168.33.10"
-    acs.vm.provision :shell, :path => "bootstrap.sh"
     acs.vm.synced_folder ".", "/vagrant", :mount_options => ["dmode=777","fmode=666"]
-
+    acs.vm.provision :shell, :path => "bootstrap.sh"
   end
 
   config.vm.define "node0" do |node0|
