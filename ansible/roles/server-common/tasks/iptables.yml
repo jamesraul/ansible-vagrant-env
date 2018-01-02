@@ -1,0 +1,4 @@
+---
+- name: disable iptables
+  service: name=iptables enabled=no state=stopped
+  when: ansible_os_family == "RedHat"

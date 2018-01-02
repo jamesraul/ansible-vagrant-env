@@ -1,0 +1,7 @@
+---
+- name: install tcpdump
+  yum: name=tcpdump state=present
+  when: ansible_os_family == "RedHat"
+- name: install tcpdump
+  apt: name=tcpdump state=present
+  when: ansible_os_family == "Debian"

@@ -1,0 +1,18 @@
+---
+- hosts: servers-all
+  become: true
+  gather_facts: yes
+  roles:
+   - server-common
+
+- hosts: servers-web
+  become: true
+  gather_facts: no
+  roles:
+   - servers-web
+
+- hosts: servers-db
+  become: true
+  gather_facts: no
+  roles:
+   - servers-db

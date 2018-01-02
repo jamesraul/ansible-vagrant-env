@@ -1,0 +1,19 @@
+---
+- name: Install net-snmp
+  yum: name=net-snmp state=present
+  when: ansible_os_family == "RedHat"
+
+- name: Install snmp utils
+  yum: name=net-snmp-utils state=present 
+  when: ansible_os_family == "RedHat"
+
+- name: Install snmpd
+  apt: name=snmpd state=present
+  when: ansible_os_family == "Debian"
+
+- name: Deploy SNMP Config
+  template: src=snmpd.conf.j2 dest=/etc/snmp/snmpd.conf
+  notify: SNMP Restart
+
+- name: Make sure service is running
+  service: name=snmpd state=started
