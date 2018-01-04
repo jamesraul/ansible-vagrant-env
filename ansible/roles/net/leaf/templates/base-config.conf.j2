@@ -1,0 +1,7 @@
+hostname {{ inventory_hostname }}
+!
+interface mgmt0
+ ip address {{ mgmt_ip }}
+!
+anycast-default-gateway mac-address {{ anycast_mac_address }}
+

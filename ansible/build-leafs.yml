@@ -1,0 +1,6 @@
+---
+- name: build leaf configs
+  hosts: leafs
+  gather_facts: no
+  roles:
+   - net/leaf

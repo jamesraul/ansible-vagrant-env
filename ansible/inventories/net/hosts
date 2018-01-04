@@ -1,0 +1,3 @@
+[leafs]
+leaf01  ansible_connection=local
+leaf02  ansible_connection=local

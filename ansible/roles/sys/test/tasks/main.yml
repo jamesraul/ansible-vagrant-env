@@ -1,0 +1,5 @@
+---
+- name: copy temp file
+  template: src=temp.txt.j2 dest=/tmp/temp.txt
+
+

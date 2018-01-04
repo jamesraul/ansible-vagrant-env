@@ -1,0 +1,7 @@
+---
+- name: remove config temp directory
+  file: path=~/tmp/configs state=absent
+- name: create config temp directory
+  file: path=~/tmp/configs state=directory
+- name: create leaf base config
+  template: src=base-config.conf.j2 dest=~/tmp/configs/{{ inventory_hostname }}.conf
